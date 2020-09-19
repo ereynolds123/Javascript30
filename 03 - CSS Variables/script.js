@@ -27,9 +27,11 @@
 
 //Function handles updates
   function handleUpdate() {
-    const suffix = this.dataset.sizing || '';
-    document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+    const datatype = this.dataset.sizing || '';
+    //Sets the property so that it is the correct CSS variable with the value clicked on and the suffix of the data type. 
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + datatype);
   }
 
+  //Takes all inputs, adds event listener and called handleUpdates
   inputs.forEach(input => input.addEventListener('change', handleUpdate));
   inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
